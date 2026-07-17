@@ -8,22 +8,20 @@ Wij bouwen de MIND-app handsfree op de Camino: de AI-agents schrijven de code, w
 
 De brug is hun eigen regel, uit Aikido's vibe-coding checklist: *"If it's worth building, it's worth securing."* (staat als kicker op slide 5).
 
-## Slide-structuur (9 slides)
+## Slide-structuur (7 slides)
 
 1. Cover (back to being × Aikido)
 2. Thesis: being busy isn't being present
 3. What we do: the world as our office (The Walk + AI-agents + route)
 4. Where Aikido comes in: AI writes the code, it still has to be safe (3 kolommen)
 5. Why MIND: MIND is the whole point (+ Aikido-kicker "if it's worth building...")
-6. The app for MIND: a weather report for your mind (+ where Aikido fits)
-7. The ask: twee vormen van steun + wie er al in zit
-8. The proposal: twee tiers (The foundation / The film - onze voorkeur)
-9. Close: from first commit to safe handover
+6. The ask: twee vormen van steun (product access + sponsoring) + de sponsoring (voorkeur, laagdrempelig) + film als optionele add-on tegen meerkosten
+7. Close: from first commit to safe handover
 
 ## Aanpassen
 
 - **Copy:** in de `<section class="slide ...">` blokken in `index.html`.
-- **De ask (slide 7 + 8):** nu "Aikido product access" + "sponsorship of the journey", tiers als scope-niveaus. Vul concreet in zodra de mail/het gesprek de exacte vraag scherp heeft (bv. welke Aikido-tier, welk sponsorbedrag).
+- **De ask (slide 6):** "Aikido product access" + een sponsoring. De sponsoring (foundation) is de voorkeur en bewust laagdrempelig; de mini-documentaire is een optionele add-on tegen meerkosten. Geen bedragen in de deck (afspreken op de call). n8n-tierbedragen (EUR 3.500 / 5.500 / 8.500) zijn alleen interne context, niet voor deze deck.
 - **Sponsorlijst (slide 7):** nu `Wispr Flow, Remote, Helloprint, Watermelon en n8n`. Voeg toe/haal weg naar gelang wie bevestigd is (website noemt ook Techleap, AI.AM, LerAI, TAG).
 - **Accentkleur (Aikido):** `--aikido: #6551F3` (violet/indigo), `--aikido-cyan: #17DFDC`, uit Aikido's live merk-CSS. Bovenin het `<style>`-blok.
 - **Aikido-logo:** nu als woordmerk ("Aikido") in de merkkleur gezet (cover + brandlock). Vervang door hun eigen SVG-logo uit de [press kit](https://www.aikido.dev/company/press-kit) als je dat inlaadt.

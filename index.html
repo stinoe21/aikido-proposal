@@ -139,15 +139,6 @@
   .tier.muted li b{ color:rgba(255,254,241,.82); }
   .tier.muted li::before{ background:rgba(255,254,241,.4); }
 
-  /* app concept: weather spectrum */
-  .wx{display:grid; grid-template-columns:repeat(5,1fr); gap:clamp(12px,1.8vw,22px); margin-top:clamp(24px,3.2vw,42px);}
-  .wx .st{display:flex; flex-direction:column; gap:9px;}
-  .wx .st svg{width:clamp(30px,3vw,42px); height:auto;}
-  .wx .st .nm{font-family:var(--sans); font-weight:500; font-size:clamp(13px,1.2vw,16px); color:var(--ink);}
-  .wx .st .ms{font-family:var(--sans); font-weight:400; font-size:clamp(11.5px,1vw,13.5px); color:var(--muted); line-height:1.4;}
-  .slide.dark .wx .st .nm{color:var(--canvas);}
-  .slide.dark .wx .st .ms{color:rgba(255,254,241,.58);}
-
   .links{ display:flex; flex-wrap:wrap; gap:clamp(14px,2vw,30px); margin-top:clamp(26px,3.2vw,40px); }
   .links a{ font-family:var(--sans); font-weight:400; font-size:clamp(15px,1.4vw,19px); color:var(--canvas);
     text-decoration:none; border-bottom:.5px solid rgba(255,254,241,.45); padding-bottom:3px; }
@@ -200,7 +191,6 @@
     .slide.dark .rows .col{border-color:rgba(255,254,241,.2);}
     .duo{grid-template-columns:1fr; gap:24px;}
     .tiers{grid-template-columns:1fr; gap:28px;}
-    .wx{grid-template-columns:repeat(2,1fr); gap:18px 20px;}
     .mark{display:none;}
   }
   @media (prefers-reduced-motion:reduce){
@@ -226,12 +216,6 @@
   </symbol>
   <symbol id="arrowR" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
   <symbol id="arrowL" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M19 12H5M11 6l-6 6 6 6"/></symbol>
-  <symbol id="w-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="8.5" fill="none" stroke="currentColor" stroke-width="2.6"/><g stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><line x1="24" y1="5" x2="24" y2="10"/><line x1="24" y1="38" x2="24" y2="43"/><line x1="5" y1="24" x2="10" y2="24"/><line x1="38" y1="24" x2="43" y2="24"/><line x1="10.7" y1="10.7" x2="14.2" y2="14.2"/><line x1="33.8" y1="33.8" x2="37.3" y2="37.3"/><line x1="10.7" y1="37.3" x2="14.2" y2="33.8"/><line x1="33.8" y1="14.2" x2="37.3" y2="10.7"/></g></symbol>
-  <symbol id="w-partly" viewBox="0 0 48 48"><circle cx="19" cy="16" r="6.5" fill="none" stroke="currentColor" stroke-width="2.4"/><g stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="19" y1="4" x2="19" y2="7.5"/><line x1="7" y1="16" x2="10.5" y2="16"/><line x1="10.2" y1="7.2" x2="12.6" y2="9.6"/><line x1="27.8" y1="7.2" x2="25.4" y2="9.6"/></g><g fill="currentColor"><circle cx="26" cy="30" r="8"/><circle cx="35" cy="30" r="7"/><circle cx="30" cy="26" r="7"/><rect x="20" y="30" width="21" height="8" rx="4"/></g></symbol>
-  <symbol id="w-cloud" viewBox="0 0 48 48"><g fill="currentColor"><circle cx="18" cy="24" r="8"/><circle cx="31" cy="24" r="9"/><circle cx="24" cy="18" r="8"/><rect x="12" y="24" width="25" height="9" rx="4.5"/></g></symbol>
-  <symbol id="w-mist" viewBox="0 0 48 48"><g fill="currentColor"><circle cx="19" cy="17" r="7"/><circle cx="29" cy="17" r="8"/><rect x="13" y="17" width="22" height="7" rx="3.5"/></g><g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" opacity=".6"><line x1="11" y1="31" x2="37" y2="31"/><line x1="14" y1="38" x2="40" y2="38"/></g></symbol>
-  <symbol id="w-storm" viewBox="0 0 48 48"><g fill="currentColor"><circle cx="18" cy="18" r="8"/><circle cx="30" cy="18" r="9"/><circle cx="24" cy="13" r="8"/><rect x="12" y="18" width="24" height="8" rx="4"/></g><path fill="currentColor" d="M25 27l-7 10h5l-2 7 8-12h-5z"/></symbol>
-  <symbol id="shield" viewBox="0 0 48 48"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linejoin="round" d="M24 4l16 6v12c0 11-7 18.5-16 22-9-3.5-16-11-16-22V10z"/><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M16.5 24l5 5 10-11"/></symbol>
 </svg>
 
 <div id="intro"><div id="introAnim"></div><svg id="introFallback" viewBox="0 0 970.79 511.74" aria-hidden="true"><use href="#logomark"/></svg></div>
@@ -323,80 +307,35 @@
     </div>
   </section>
 
-  <!-- 6 · THE APP FOR MIND -->
-  <section class="slide dark">
-    <div class="mark"><svg viewBox="0 0 970.79 511.74"><use href="#logomark"/></svg><span>back to being</span></div>
-    <div class="inner reveal">
-      <div class="eyebrow">The app we build for MIND</div>
-      <h2 class="lg">A weather report for your <span class="it">mind.</span></h2>
-      <p class="lead">MIND holds a huge library of help, but you have to go find it, and the energy to search is exactly what's missing when things are heavy. So we flip it. One question, <span class="em">how's the weather in your head?</span>, becomes the way in: you answer in weather, and the app hands you one small step from MIND's content, every day.</p>
-      <div class="wx" aria-hidden="true">
-        <div class="st"><svg viewBox="0 0 48 48" style="color:var(--sand)"><use href="#w-sun"/></svg><span class="nm">Clear</span><span class="ms">room in your head</span></div>
-        <div class="st"><svg viewBox="0 0 48 48" style="color:var(--grass)"><use href="#w-partly"/></svg><span class="nm">Partly cloudy</span><span class="ms">mixed, but there's light</span></div>
-        <div class="st"><svg viewBox="0 0 48 48" style="color:var(--sky)"><use href="#w-cloud"/></svg><span class="nm">Cloudy</span><span class="ms">grey, it's a bit much</span></div>
-        <div class="st"><svg viewBox="0 0 48 48" style="color:var(--muted)"><use href="#w-mist"/></svg><span class="nm">Misty</span><span class="ms">a lot inside, no overview</span></div>
-        <div class="st"><svg viewBox="0 0 48 48" style="color:var(--aikido-lt)"><use href="#w-storm"/></svg><span class="nm">Stormy</span><span class="ms">it's heavy today</span></div>
-      </div>
-      <p class="lead" style="font-size:clamp(14.5px,1.25vw,16.5px); margin-top:clamp(20px,2.4vw,30px);"><span class="em">Where Aikido fits:</span> this app holds how people feel on their hardest days, the most sensitive data there is. Aikido secures every layer, from the code the agents write to the cloud it runs on, so MIND and everyone who opens it can trust what we hand over.</p>
-    </div>
-  </section>
-
-  <!-- 7 · THE ASK -->
-  <section class="slide">
-    <div class="mark"><svg viewBox="0 0 970.79 511.74"><use href="#logomark"/></svg><span>back to being</span></div>
-    <div class="inner reveal">
-      <div class="eyebrow">The ask</div>
-      <h2>What we're <span class="it">asking.</span></h2>
-      <p class="lead">We're looking for two forms of support, and we'd shape the exact fit on a short call.</p>
-      <div class="duo">
-        <div class="blk"><div class="lbl">Who's already in</div><div class="txt">We have <span class="fig">Wispr Flow, Remote, Helloprint, Watermelon and n8n</span> on board. We'd love Aikido in the mix as the security layer, the reason AI-built software is safe enough to hand over.</div></div>
-        <div class="blk"><div class="lbl">What we're looking for</div><div class="txt">Two forms of support: <span class="fig">Aikido product access</span> to secure the build and what MIND keeps running, and a <span class="fig">sponsorship of the journey</span> toward production, technology and documentation. The next page shows the two levels.</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 8 · DELIVERABLES -->
+  <!-- 6 · THE ASK -->
   <section class="slide dark aikido">
     <div class="mark"><svg viewBox="0 0 970.79 511.74"><use href="#logomark"/></svg><span>back to being</span></div>
     <div class="inner reveal">
-      <div class="eyebrow">The proposal</div>
-      <h2 class="lg">Two ways to come <span class="it">in.</span></h2>
-      <p class="lead">A sponsorship of the journey, at two levels. On top of either, Aikido product access for the team through the build and the handover. We'd shape the exact fit together on a call.</p>
-      <div class="tiers">
-        <div class="tier muted">
-          <div class="th">
-            <div class="tname">The foundation</div>
-            <div class="tcond">the core sponsorship</div>
-          </div>
-          <ul>
-            <li><b>Category exclusivity</b> as the only security tool in the story.</li>
-            <li>Genuine <b>on-screen use of Aikido</b> securing the code the agents write on the trail.</li>
-            <li>A <b>behind-the-scenes piece</b> walking through the real Aikido dashboard: what it flagged, what we fixed.</li>
-            <li>Your <b>logo across website, socials</b> and sponsor touchpoints, and a dedicated announcement post.</li>
-          </ul>
+      <div class="eyebrow">The ask</div>
+      <h2 class="lg">What we're <span class="it">asking.</span></h2>
+      <p class="lead">Two forms of support, shaped to fit on a short call: <span class="em">Aikido product access</span> for the team through the build and the handover, and <span class="em">a sponsorship of the journey</span>. Here is what the sponsorship holds.</p>
+      <div class="tier" style="margin-top:clamp(20px,2.6vw,32px); max-width:680px;">
+        <div class="th">
+          <div class="tname">The sponsorship <span class="pref">our preference</span></div>
+          <div class="tcond">one simple level, kept low-threshold</div>
         </div>
-        <div class="tier">
-          <div class="th">
-            <div class="tname">The film <span class="pref">our preference</span></div>
-            <div class="tcond">everything above, plus the documentary</div>
-          </div>
-          <ul>
-            <li class="plus">Everything in The foundation, plus:</li>
-            <li>A <b>branded mini-documentary centered on Aikido</b>: not security behind a desk, but security keeping up with code built handsfree on the Camino, and the safe handover to MIND.</li>
-            <li>The film is <b>yours to reuse</b> across your own channels, for as long as it stays online.</li>
-          </ul>
-        </div>
+        <ul>
+          <li><b>Category exclusivity</b> as the only security tool in the story.</li>
+          <li>Genuine <b>on-screen use of Aikido</b> securing the code the agents write on the trail.</li>
+          <li>A <b>behind-the-scenes piece</b> through the real Aikido dashboard: what it flagged, what we fixed.</li>
+          <li>Your <b>logo on website, socials</b> and touchpoints, plus an announcement post.</li>
+        </ul>
       </div>
-      <p style="font-family:var(--sans); font-size:clamp(13.5px,1.15vw,15px); line-height:1.55; color:rgba(255,254,241,.62); margin-top:clamp(22px,2.6vw,32px); max-width:64ch;">These two are the starting point. If Aikido has an idea of its own, a co-published "we secured an app built entirely by AI, on a mountain" story, something only your team would think of, that's what we'd love to shape on the call.</p>
+      <p style="font-family:var(--sans); font-size:clamp(13.5px,1.15vw,15px); line-height:1.55; color:rgba(255,254,241,.62); margin-top:clamp(18px,2.2vw,28px); max-width:70ch;">Already on board: Wispr Flow, Remote, Helloprint, Watermelon and n8n. <span style="color:rgba(255,254,241,.82);">Optional, on request:</span> a branded mini-documentary centered on Aikido, a bigger production at extra scope; the sponsorship above is where we'd start.</p>
     </div>
   </section>
 
-  <!-- 9 · CLOSE -->
+  <!-- 7 · CLOSE -->
   <section class="slide tree dark">
     <div class="inner reveal">
       <div class="eyebrow">The invitation</div>
       <h2 class="xl">From first commit to safe handover, <span class="it">with us.</span></h2>
-      <p class="lead">We capture all of it in a short documentary, with Aikido on screen where the code gets written and checked. <span class="em">We'd love Aikido in it from the first commit,</span> and to hand MIND something, secured with Aikido, they can trust long after the trail ends.</p>
+      <p class="lead"><span class="em">We'd love Aikido in from the first commit:</span> securing the code as the agents write it, on screen where it happens, and handing MIND something, secured with Aikido, they can trust long after the trail ends.</p>
       <div class="links">
         <a class="lead-link" href="mailto:stijnysmit@gmail.com">stijnysmit@gmail.com</a>
         <a href="https://backtobeing.tech">backtobeing.tech</a>
@@ -416,7 +355,7 @@
   <button id="prev" aria-label="Previous slide"><svg><use href="#arrowL"/></svg></button>
   <button id="next" aria-label="Next slide"><svg><use href="#arrowR"/></svg></button>
 </nav>
-<div id="counter">01 / 09</div>
+<div id="counter">01 / 07</div>
 
 <script>
   const track=document.getElementById('track');
